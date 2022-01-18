@@ -10,7 +10,8 @@
 </head>
 
 <body>
-
+    @extends('layouts.app')
+    @section('content')
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
@@ -36,7 +37,7 @@
                         <table class="table table-bordered mt-1">
                             <thead>
                                 <tr>
-                                    <th scope="col">Nama</th>
+                                    <th scope="col">Nama Barang</th>
                                     <th scope="col">Stok</th>
                                     <th scope="col">Harga</th>
                                     <th scope="col">Action</th>
@@ -75,6 +76,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    @endsection
 </body>
 
 </html>

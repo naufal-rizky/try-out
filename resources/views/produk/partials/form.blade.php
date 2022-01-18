@@ -1,5 +1,5 @@
 <div class="form-group">
-    <label for="nama">nama</label>
+    <label for="nama">nama barang</label>
     <input type="text" class="form-control @error('nama') is-invalid @enderror"
         name="nama" value="{{ old('nama') ?? $produk->nama }}" required>
 

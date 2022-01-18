@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Produk;
 use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -24,7 +25,9 @@ Auth::routes();
 //route untuk role
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::view('/admin','admin')->name('admin');
-Route::view('/toko','toko')->name('toko');
+Route::view('/toko','produk.index', [
+    'produks' => Produk::all()
+])->name('toko');
 Route::view('/bank','bank')->name('bank');
 
 Route::resource('produk', ProdukController::class)->except('show');
